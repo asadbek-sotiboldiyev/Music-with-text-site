@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404
 from music.models import Artist
 from .functions import create_artist
 
@@ -13,7 +14,7 @@ def ArtistListView(request):
 	return render(request,'artist/artists_list.html',context)
 
 def ArtistView(request,artist_id):
-	artist=Artist.objects.get(id=artist_id)
+	artist=get_object_or_404(Artist, id=artist_id)
 	musics=artist.musics.all()
 	context={
 		'artist':artist,
@@ -24,7 +25,7 @@ def ArtistView(request,artist_id):
 @login_required(login_url="/aut/login/")
 def ArtistAddView(request):
 	if not request.user.is_superuser:
-		return render(request,'404.html')
+		return render(request,'403.html')
 	users=User.objects.all()
 	context={'users':users}
 	if request.method=='POST':

@@ -21,7 +21,7 @@
 					<a class="header-nav-link" href="{% url 'musiclist_page' %}">Musics</a>
 					<a class="header-nav-link" href="{% url 'contact_page' %}">Contact</a>
 					{% if user.is_staff %}
-						<a class="header-nav-link" href="{% url 'musicadd_page' %}">Musics add+</a>
+						<a class="header-nav-link" href="{% url 'musicadd_page' %}">Music add+</a>
 					{% endif %}
 					{% if user.is_superuser %}
 						<a class="header-nav-link" href="{% url 'artistadd_page' %}">Artist add+</a>
@@ -37,7 +37,7 @@
 		<div id="title">
 			<div class="container">
 				<h1>Music With Text</h1>
-				<p>Bu saytda siz musiqalarni matni blan birga tinglay olasiz</p>
+				<p>Bu saytda siz musiqalarni matni bilan birga tinglay olasiz</p>
 			</div>
 		</div>
 		
