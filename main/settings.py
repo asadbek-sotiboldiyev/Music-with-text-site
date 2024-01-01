@@ -127,13 +127,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
 # STATICFILES_DIRS=[str(BASE_DIR.joinpath('static'))]
 
-
-# DEFAULT_FILE_STORAGE='storages.backends.dropbox.DropBoxStorage'
-# DROPBOX_ACCESS_TOKEN='sl.Br0ccgH6QEmPl8pVQkzWSdE_g03bB0MJmj191HieBWOU5Pz3tnGVpZbPvYBCD8qk6EtZ1XF1J8Cc_faPq-BkxhUBviw2RJo4TKwttGyPMq_GUGduPiDBLcmZYJoKt7yjrnc6iX8YIouR6rVNDIkp'
-# DROPBOX_CONSUMER_KEY='tmf415rahnm9nr1'
-# DROPBOX_CONSUMER_SECRET='gvvw9qls1pvc9a5'
-# DROPBOX_ROOT_FOLDER = ''
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 # Default primary key field type

@@ -1,10 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import FileExtensionValidator
-# from django_dropbox_storage.storage import DropboxStorage
-
-# DROPBOX_STORAGE = DropboxStorage()
-
 
 class Artist(models.Model):
 	user=models.ForeignKey(User,on_delete=models.CASCADE)
