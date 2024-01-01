@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -124,7 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[str(BASE_DIR.joinpath('static'))]
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
+# STATICFILES_DIRS=[str(BASE_DIR.joinpath('static'))]
 
 # DEFAULT_FILE_STORAGE='storages.backends.dropbox.DropBoxStorage'
 # DROPBOX_ACCESS_TOKEN='sl.Br0ccgH6QEmPl8pVQkzWSdE_g03bB0MJmj191HieBWOU5Pz3tnGVpZbPvYBCD8qk6EtZ1XF1J8Cc_faPq-BkxhUBviw2RJo4TKwttGyPMq_GUGduPiDBLcmZYJoKt7yjrnc6iX8YIouR6rVNDIkp'
