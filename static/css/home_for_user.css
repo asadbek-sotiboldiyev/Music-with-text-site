@@ -1,0 +1,42 @@
+body{
+    background-image: url('../images/poster.png');
+    background-size: cover;
+}
+#content{
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(48, 209, 169, 0.6);
+}
+.list-link{
+    text-align: center;
+    display: block;
+    font-size: 35px;
+    text-decoration: none;
+    padding: 20px 15px;
+    border-radius: 8px;
+    margin: 8px 0;
+    color: white;
+    background-color: #004d3c;
+}
+.list-link:hover{
+    color: rgb(0, 233, 30);
+    box-shadow: 0 0 8px 2px rgb(0, 233, 30);
+}
+
+
+
+
+
+@media(max-width:500px) {
+    body{
+        background-image: url('../images/mobile-poster-2.png');
+    }
+    #title{
+        font-size: 18px;
+    }
+    .list-link{
+        font-size: 25px;
+        padding: 10px;
+    }
+}

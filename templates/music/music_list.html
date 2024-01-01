@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block static_link %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/listpages.css' %}">
+{% endblock static_link %}
+
+{% block title %}
+	Musics
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+	<h1 id="page-title">Top Musics</h1>
+	{% for music in musics %}
+		<div class="list-box">
+			<img src="{{ music.music_img.url }}" width="90" height="90">
+			<div class="list-box-detail">
+				<a class="list-box-title link" href="{% url 'music_page' music.id %}">{{ music.title }}</a>
+				<p class="list-box-artist">
+					{{ music.artists_str }}
+				</p>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
+{% endblock content %}

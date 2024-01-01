@@ -1,0 +1,43 @@
+.list-box{
+    display: flex;
+	padding: 10px;
+	margin: 10px 0;
+    border-radius: 8px;
+    background-color: #004d3c;
+}
+.list-box img{
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+}
+.list-box a,.list-box p{
+    display: block;
+    text-decoration: none;
+}
+.list-box-detail{
+    margin: auto auto;
+    width: 100%;
+    margin-left: 10px;
+}
+.list-box-title{
+    color: white;
+    font-size: 26px;
+}
+.list-box-artist{
+    color: rgb(201, 201, 201);
+    font-size: 19px;
+}
+
+
+@media(max-width:500px){
+    .list-box img{
+        width: 60px;
+        height: 60px;
+    }
+    .list-box-title{
+        font-size: 19px;
+    }
+    .list-box-artist{
+        font-size: 16px;
+    }
+}

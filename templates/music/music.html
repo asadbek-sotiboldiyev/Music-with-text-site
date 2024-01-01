@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block static_link %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/music.css' %}">
+{% endblock static_link %}
+
+{% block title %}
+	{{ music.title }}
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+	<div id="music-box">
+		<img src="{{ music.music_img.url }}" width="200" height="200">
+		<div id="music-box-detail">
+				<h1 id="music-box-title">{{ music.title }}</h1>
+				<section>
+					{% for artist in artists %}
+						<a class="music-box-artist link" href="{% url 'artist_page' artist.id %}">{{ artist.name }}</a>
+					{% endfor %}
+					<br>
+				</section>
+		</div>
+	</div>
+	{% if user.is_authenticated %}
+		<audio controls="" controlsList="nodownload">
+			<source src="{{ music.music.url }}" type="audio/{{ type }}">
+		</audio>
+
+		<div id="text-box">
+			<p class="music-text">
+				{{ text|safe }}
+			</p>
+		</div>
+	{% else %}
+		<div id="music-box">
+			<h2 id="music-box-title">
+				Qo'shiq matnini ko'rish uchun <a class="login-link link" href="{% url "login_page" %}">Ro'yxatdan o'ting</a>.
+			</h2>
+		</div>
+	{% endif %}
+	<div id="margin"></div>
+
+
+	<footer>
+		<p>Developer: <a class="link" href="https://github.com/asadbek-sotiboldiyev" target='_blank'>AsAdbEk Sotiboldiyev</a></p>
+	</footer>
+	
+</div>
+{% endblock content %}

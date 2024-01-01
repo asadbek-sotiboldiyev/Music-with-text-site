@@ -1,0 +1,82 @@
+*{
+	margin: 0;
+	padding: 0;
+    font-family: 'Ubuntu', sans-serif;}
+body{
+    background-color: rgb(48, 209, 169);
+}
+header{
+    background-color: rgb(0, 87, 65);
+    margin-bottom: 10px;
+}
+.header-nav-link{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 19px;
+}
+.header-nav-link:hover{
+    background-color: rgb(0, 112, 84);
+    text-decoration: underline;
+}
+.message-success{
+    color: rgb(0, 87, 65);
+    background-color: white;
+    padding: 15px;
+    border: 2px solid rgb(0, 223, 30);
+    font-size: 20px;
+    display: inline;
+    position: relative;
+}
+.btn-x{
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid red;
+    padding: 5px;
+    font-size: 15px;
+    background-color: white;
+}
+.none{
+    display: none;
+}
+.container{
+	width: 90%;
+	margin: 0 auto;
+}
+.link:hover{
+    text-decoration: underline;
+}
+#page-title{
+    margin: 5px 0;
+    padding-left: 10px;
+    border-left: 3px solid rgb(0, 87, 65);
+}
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #003328;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 5px 0;
+    padding: 10px 0;
+    
+}
+footer a{
+    text-decoration: none;
+    color: white;
+}
+#margin{
+    margin-bottom: 50px;
+}
+@media(max-width:500px){
+    .header-nav-link{
+        font-size:  16px;
+    }
+    #page-title{
+        font-size: 22px;
+    }
+}

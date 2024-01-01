@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block static_link %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/auth.css' %}">
+{% endblock static_link %}
+
+{% block title %}
+	Login
+{% endblock title %}
+<!-- Content -->
+{% block content %}
+<div id="content">
+	
+	<form action="" method='POST' name='form_post'>
+		{% csrf_token %}
+		<h2 id="page-title">Sign Up</h2>
+		{% if error %}
+			<div class='input-error'>{{ error }}</div>
+		{% endif %}
+		<div class="form-input">
+			<input class="input" type="text" name="email" id="email" placeholder="Email">
+			<label class="label" for="email">Email</label>
+		</div>
+		<div class="form-input">
+			<input class="input" type="password" name="password1" id="password1" placeholder="Password">
+			<label class="label" for="password1">Password</label>
+		</div>
+
+		<div class="form-input">
+			<input class="input" type="password" name="password2" id="password2" placeholder="Repeat password">
+			<label class="label" for="password2">Repeat password</label>
+		</div>
+		<button type="button" id="submit-btn" onclick="form_validation()">Sign Up</button>
+		<p class="footer-p">Akkountingiz bormi? <a href="{% url 'login_page' %}">Kiring</a></p>
+	</form>
+</div>
+<script>
+	
+	function form_validation(){
+		let form=document.getElementsByTagName('form');
+		let password1=document.getElementById('password1');
+		let password2=document.getElementById('password2');
+		if(password1.value==password2.value){
+			console.log("Form is valid!");
+			document.form_post.submit();
+		}else{
+			console.log("Form is invalid");
+		}
+	}
+</script>
+<!-- Content -->
+{% endblock content %}

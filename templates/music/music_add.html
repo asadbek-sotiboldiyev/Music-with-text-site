@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block static_link %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/music-upload.css' %}">
+{% endblock static_link %}
+
+{% block title %}
+	Music add+
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+  <h1 id="page-title">Music add +</h1>
+  <form action="" method="post" enctype="multipart/form-data" id="music-upload-form">
+    {% csrf_token %}
+    <div class="div-input">
+      <input class="input" type="text" name="title" id="title" placeholder="Qo'shiq nomi">
+    </div>
+
+    <div class="div-input">
+      <p class="select-title">Artist</p>
+      <select name="artist" id="select-artist" multiple="">
+        <!-- user -> selected hidden -->
+        {% for artist in artists %}
+          <option value="{{ artist.id }}">{{ artist.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="div-input">
+      <label class="label-file link" id="label-music" for="music">Musiqa</label>
+      <input class="input-file" type="file" name="music" id="music" onchange="loadFile_music(event)" accept=".mp3, .ogg, .wav">
+      <br>
+      <p class="output" id="output-music"></p>
+    </div>
+
+    <div class="div-input">
+      <label class="label-file link" id="label-txt" for="text">Musiqa matni</label>
+      <input class="input-file" type="file" name="text" id="text" onchange="loadFile_txt(event)" accept=".txt">
+      <br>
+      <p class="output" id="output-txt"></p>
+    </div>
+
+    <div class="div-input">
+      <label class="label-file link" id="label-img" for="music-img">Musiqa rasmi</label>
+      <input class="input-file" type="file" name="music_img" id="music-img" onchange="loadFile_img(event)" accept=".jpg, .jpeg, .png">  
+      <br>
+      <img class="output" id="output-img" width="150">
+    </div>
+    <button id="upload-btn" type="submit">Joylash</button>
+  </form>
+</div>
+
+<script src="{% static "js/script.js" %}"></script>
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block static_link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/auth.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+{% endblock static_link %}
+
+{% block title %}
+    Contact
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <form action="" method='POST'>
+            {% csrf_token %}
+    		<h2 id="page-title">Bog'lanish</h2>
+
+            <div class="form-input">
+                <input required class="input" type="text" name="name" id="name" placeholder="Ismingiz">
+                <label class="label" for="name">Ismingiz</label>
+            </div>
+
+            <div class="form-input">
+                <input required class="input" type="email" name="email" id="email" placeholder="Email">
+                <label class="label" for="email">Email</label>
+            </div>
+
+            <div class="form-input">
+                <textarea required class="input" type="text" name="text" id="text" placeholder="Xabar" rows="6"></textarea>
+                <label class="label" for="text">Xabar</label>
+            </div>
+
+            <button id="submit-btn" type="submit">Jo'natish</button>
+
+        </form>
+    </div>
+    <footer>
+        <p>Developer: <a class="link" href="https://github.com/asadbek-sotiboldiyev" target='_blank'>AsAdbEk Sotiboldiyev</a></p>
+    </footer>
+   {% endblock content %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block static_link %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/music-upload.css' %}">
+{% endblock static_link %}
+
+{% block title %}
+	Music add+
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+  <h1 id="page-title">Music add +</h1>
+  <form action="" method="post" enctype="multipart/form-data" id="music-upload-form">
+    {% csrf_token %}
+    <div class="div-input">
+      <input class="input" type="text" name="name" id="name" placeholder="Taxallus">
+    </div>
+
+    <div class="div-input">
+      <p class="select-title">User</p>
+      <select name="user" id="select-artist">
+        <!-- user -> selected hidden -->
+        {% for user in users %}
+          <option value="{{ user.id }}">{{ user.email }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="div-input">
+      <label class="label-file link" id="label-img" for="profile-img">Profil rasmi</label>
+      <input class="input-file" type="file" name="profile_img" id="profile-img" onchange="loadFile_img(event)" accept=".jpg, .jpeg, .png">  
+      <br>
+      <img class="output" id="output-img" width="150">
+    </div>
+    <button id="upload-btn" type="submit">Joylash</button>
+  </form>
+</div>
+
+<script src="{% static "js/script.js" %}"></script>
+{% endblock content %}
