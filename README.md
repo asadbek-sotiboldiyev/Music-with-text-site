@@ -1,5 +1,5 @@
-<h1>Music xith Text</h1>
-<p>Musqiqlarni eshitib, she'rini o'qish imkonini beradi.</p>
+<h1>Music with Text</h1>
+<p>Musqialarni eshitib, she'rini o'qish imkonini beradi.</p>
 <hr>
 <p>Ishlatilgan tillar va texnalogiyalar:</p>
 <ul>
